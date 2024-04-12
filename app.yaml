@@ -1,0 +1,25 @@
+runtime: php8.0
+env: flex
+
+runtime_config:
+  document_root: public
+
+handlers:
+  - url: /index.php
+    script: auto
+
+  # Serve static files.
+  - url: /(.*)
+    static_files: public/\1
+    upload: public/(.*)
+
+  entrypoint:
+    index.php
+
+    env_variables:
+
+      CLOULD_USER: root
+      CLOULD_DB: agroculture
+      CLOULDSQL_PASSWORD: Tchag2000!!!
+      CLOULD_DSN: agroweb-420121:us-central1:webapp
+
